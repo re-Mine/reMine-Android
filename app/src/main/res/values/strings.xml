@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">reMine</string>
+    <string name="title_home">Home</string>
+    <string name="title_declaration">Declaration</string>
+    <string name="title_community">Community</string>
+    <string name="title_mypage">Mypage</string>
+</resources>
