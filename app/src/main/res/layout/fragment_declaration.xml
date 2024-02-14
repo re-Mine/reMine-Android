@@ -2,131 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_declaration"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9F9F9"
     tools:context="com.remine.ui.declaration.DeclarationFragment">
 
     <TextView
-        android:id="@+id/tv_top"
-        android:layout_width="wrap_content"
+        android:id="@+id/text_declaration"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="OO님,\n오늘도 선언을 통해\n다짐을 이어나가요!"
-        android:textSize="28sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_decl1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_top">
-
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="오늘의 선언"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_decl_sentence"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:text="건강한 선택이\n내 힘과 행복의 원천이다."/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@id/cl_decl1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <TextView
-            android:id="@+id/btn_declaration"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:text="선언 하기"
-            android:layout_marginEnd="10dp"
-            android:textColor="@color/white"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:background="@drawable/btn_blue"
-            android:textSize="18sp"/>
-        <TextView
-            android:id="@+id/btn_how_to_declaration"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:text="선언 하는 법"
-            android:textColor="#4F4F4F"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:background="@drawable/bg_decl_how_to"
-            android:textSize="18sp"/>
-    </LinearLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/bg_decl"
-        app:layout_constraintTop_toBottomOf="@+id/ll_btn"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <TextView
-            android:id="@+id/tv_decl_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="25dp"
-            android:paddingVertical="20dp"
-            android:text="지난 7일동안\n총 3번의 선언을\n실천했어요!"
-            android:textSize="23sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager2"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-        </androidx.viewpager2.widget.ViewPager2>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_declaration"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            tools:listitem="@layout/item_declaration"
-            app:layout_constraintTop_toBottomOf="@+id/tv_decl_description"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,31 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="com.remine.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_declarationFragment"
-            app:destination="@id/navigation_declaration" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_declaration"
         android:name="com.remine.ui.declaration.DeclarationFragment"
         android:label="@string/title_declaration"
-        tools:layout="@layout/fragment_declaration">
-        <action
-            android:id="@+id/action_declarationFragment_to_declarationRecordingFragment"
-            app:destination="@id/navigation_declaration_recording" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigation_declaration_recording"
-        android:name="com.remine.ui.declaration.DeclarationRecordingFragment"
-        android:label="Declaration Recording"
-        tools:layout="@layout/fragment_declaration_recording">
-        <action
-            android:id="@+id/action_declarationRecordingFragment_to_declarationFragment"
-            app:destination="@id/navigation_declaration" />
-    </fragment>
+        tools:layout="@layout/fragment_declaration" />
 
     <fragment
         android:id="@+id/navigation_community"
