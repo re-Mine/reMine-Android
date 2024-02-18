@@ -17,9 +17,9 @@
         android:text="OO님,\n오늘도 선언을 통해\n다짐을 이어나가요!"
         android:textSize="28sp"
         android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/ibm_semibold"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_decl1"
@@ -50,7 +50,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp"
-            android:text="오늘도 000명의 사용자들이\n다짐을 이어나갔어요"/>
+            android:text="오늘도 000명의 사용자들이\n다짐을 이어나갔어요"
+            android:fontFamily="@font/ibm_semibold"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -65,7 +66,9 @@
             android:paddingVertical="10dp"
             android:gravity="center"
             android:background="@drawable/btn_blue"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:fontFamily="@font/ibm_semibold"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -87,7 +90,9 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/ibm_semibold"/>
+
 
         <TextView
             android:id="@+id/tv_description"
@@ -97,7 +102,9 @@
             android:textSize="15sp"
             android:textColor="#4285F4"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/ibm_medium"/>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -109,7 +116,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp"
-            android:text="건강한 선택이\n내 힘과 행복의 원천이다."/>
+            android:text="건강한 선택이\n내 힘과 행복의 원천이다."
+            android:fontFamily="@font/gowun_dodum_regular"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -137,13 +145,14 @@
             android:id="@+id/tv_decl_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:text="선언문을 낭독하고\n다짐을 이어나가요!"
             android:textSize="20sp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ib_mic" />
+            app:layout_constraintTop_toBottomOf="@id/ib_mic"
+            android:fontFamily="@font/ibm_semibold"/>
 
         <ImageButton
             android:id="@+id/ib_mic"
@@ -154,6 +163,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@drawable/btn_mic" />
+
+        <ImageButton
+            android:id="@+id/ib_mic_stop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/btn_stop"
+            android:visibility="invisible"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
