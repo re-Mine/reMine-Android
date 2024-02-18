@@ -65,19 +65,25 @@
             android:layout_gravity="end"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/iconEmoji1"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_emoji" />
 
-            <ImageView
+
+            <ImageButton
                 android:id="@+id/iconComment1"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_comment" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -142,19 +148,24 @@
             android:layout_gravity="end"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/iconEmoji2"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_emoji" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/iconComment2"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_comment" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -219,19 +230,24 @@
             android:layout_gravity="end"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/iconEmoji3"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_emoji" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/iconComment3"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:background="@android:color/transparent"
                 android:src="@drawable/ic_comment" />
+
         </LinearLayout>
 
     </LinearLayout>

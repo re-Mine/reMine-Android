@@ -54,17 +54,22 @@
                 android:layout_height="690dp"
                 android:src="@drawable/detail_computer" />
 
-            <ImageButton
+
+            <Button
                 android:id="@+id/ButtonApply"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="50dp"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/button_apply" />
+                android:background="@drawable/button_round"
+                android:backgroundTint="@color/colorCommunityPrimary"
+                android:text="일정 신청 완료하기"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:fontFamily="@font/ibm_semibold"/>
 
 
         </LinearLayout>
