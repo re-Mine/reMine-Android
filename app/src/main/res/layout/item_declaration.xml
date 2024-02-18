@@ -30,7 +30,8 @@
         android:text="최고의 버전으로\n변화하며,\n삶의 아름다움을\n찾아가자."
         android:textSize="17sp"
         android:textAlignment="center"
-        android:textColor="#3e3e3e"/>
+        android:textColor="#3e3e3e"
+        android:fontFamily="@font/gowun_dodum_regular" />
 
     <TextView
         android:id="@+id/btn_replay"
@@ -43,6 +44,7 @@
         android:background="@drawable/btn_replay"
         android:text="선언 다시 듣기"
         android:textColor="#4285F4"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:fontFamily="@font/ibm_medium" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
