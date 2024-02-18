@@ -1,4 +1,5 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_declaration_recording"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         android:id="@+id/tv_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="OO님,\n오늘도 선언을 통해\n다짐을 이어나가요!"
@@ -114,6 +115,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_recording"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
@@ -122,14 +124,14 @@
 
         <ImageView
             android:id="@+id/bg_mic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:scaleType="fitXY"
             app:layout_constraintTop_toTopOf="@+id/ib_mic"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="50dp"
-            android:background="@drawable/bg_mic" />
+            android:src="@drawable/bg_mic" />
 
         <TextView
             android:id="@+id/tv_decl_description"
