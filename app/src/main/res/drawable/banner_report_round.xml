@@ -12,13 +12,10 @@
             <stroke
                 android:width="2dp"
                 android:color="@android:color/transparent"/>
-            <solid android:color="@color/communityColorPrimary"/>
+            <solid android:color="#DDFFE6"/>
 
             <corners
-                android:topLeftRadius="12dp"
-                android:topRightRadius="12dp"
-                android:bottomLeftRadius="12dp"
-                android:bottomRightRadius="12dp"/>
+                android:bottomLeftRadius="40dp" />
         </shape>
 
     </item>

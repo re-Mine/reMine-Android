@@ -17,6 +17,17 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    /*override fun onCreate(savedInstanceState: Bundle?) {
+
+        val adapter = ReportAdapter(supportFragmentManager)
+        adapter.addFragment(WriteReportFragment(), "작성하기")
+        adapter.addFragment(MonthlyReportFragment(), "한 달의 기록")
+        adapter.addFragment(CreateReportFragment(), "보고서 생성")
+        binding.reportViewPager.adapter = adapter
+        binding.reportTabLayout.setupWithViewPager(binding.reportViewPager)
+    }*/
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,10 +39,15 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
+        val adapter = ReportAdapter(childFragmentManager)
+
+        adapter.addFragment(WriteReportFragment(), "작성하기")
+        adapter.addFragment(MonthlyReportFragment(), "한 달의 기록")
+        adapter.addFragment(CreateReportFragment(), "보고서 생성")
+        _binding?.reportViewPager?.adapter = adapter
+        _binding?.reportTabLayout?.setupWithViewPager(_binding?.reportViewPager)
+
         return root
     }
 
