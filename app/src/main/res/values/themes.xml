@@ -2,7 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <!-- 상단바 제거 -->
+        <item name="windowNoTitle">true</item>
+        <!-- 색상 변경 -->
+        <item name="colorPrimary">#FBBC05</item>
+        <!-- item name="colorPrimary">@color/purple_500</item -->
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -10,7 +14,8 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- 상태바 색상 변경-->
+        <item name="android:statusBarColor">#FBBC05</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>
