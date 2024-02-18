@@ -104,16 +104,21 @@
                         android:paddingBottom="10dp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-                    <ImageButton
+                    <Button
                         android:id="@+id/buttonCheckNews"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="30dp"
                         android:layout_marginRight="30dp"
-                        android:background="@android:color/transparent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/button_checknews" />
+                        android:background="@drawable/button_round"
+                        android:backgroundTint="@color/colorCommunityPrimary"
+                        android:text="다른 치료자들의 소식 확인하기"
+                        android:textColor="@color/white"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/ibm_semibold"/>
+
+
                 </LinearLayout>
 
 

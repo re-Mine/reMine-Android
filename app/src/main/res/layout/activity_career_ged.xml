@@ -25,13 +25,17 @@
                 android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
 
-                <ImageView
+                <TextView
                     android:id="@+id/bannerPreviewCareer"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
-                    android:src="@drawable/banner_preview_career" />
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="커리어"
+                    android:textSize="33dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ibm_semibold"/>
 
                 <ImageButton
                     android:id="@+id/ButtonHome"
@@ -43,6 +47,7 @@
                     android:layout_gravity="center"
                     android:background="@android:color/transparent"
                     android:src="@drawable/button_home" />
+
             </LinearLayout>
 
             <ImageView
@@ -51,17 +56,21 @@
                 android:layout_height="690dp"
                 android:src="@drawable/detail_ged" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/ButtonApply"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="50dp"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/button_apply" />
+                android:background="@drawable/button_round"
+                android:backgroundTint="@color/colorCommunityPrimary"
+                android:text="일정 신청 완료하기"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:fontFamily="@font/ibm_semibold"/>
 
 
         </LinearLayout>
