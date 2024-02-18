@@ -10,4 +10,8 @@
         android:fontWeight="400"
         android:font="@font/ibm_medium"/>
 
+    <font android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/gowun_dodum_regular"/>
+
 </font-family>
