@@ -14,17 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
         tools:targetApi="31">
+      
         <activity
-            android:name=".login.LoginActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MyApplication">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+          android:name=".login.LoginActivity"
+          android:exported="true"
+          android:theme="@style/Theme.MyApplication">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+              <category android:name="android.intent.category.LAUNCHER" />
+          </intent-filter>
         </activity>
-        <activity
+              <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/app_name"
@@ -37,6 +37,18 @@
 <!--             <category android:name="android.intent.category.LAUNCHER" />-->
 <!--             </intent-filter>-->
         </activity>
+        <activity
+            android:name=".ui.community.career.CareerInterviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.community.career.CareerComputerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.community.career.CareerGedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.community.career.CareerPreviewActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
