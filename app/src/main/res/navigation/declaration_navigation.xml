@@ -2,22 +2,15 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.remine.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home"/>
-
+    android:id="@+id/declaration_navigation"
+    app:startDestination="@id/navigation_declaration">
     <fragment
         android:id="@+id/navigation_declaration"
         android:name="com.remine.ui.declaration.DeclarationBaseFragment"
         android:label="@string/title_declaration"
         tools:layout="@layout/fragment_declaration_base">
         <!--        <action-->
-        <!--            android:id="@+id/action_declarationBaseFragment_to_declarationRecordingFragment"-->
+        <!--            android:id="@+id/action_declarationFragment_to_declarationRecordingFragment"-->
         <!--            app:destination="@id/navigation_declaration_recording" />-->
     </fragment>
 
@@ -30,18 +23,4 @@
             android:id="@+id/action_declarationRecordingFragment_to_declarationFragment"
             app:destination="@id/navigation_declaration" />
     </fragment>
-
-    <fragment
-        android:id="@+id/navigation_community"
-        android:name="com.remine.ui.community.CommunityFragment"
-        android:label="@string/title_community"
-        tools:layout="@layout/fragment_community" >
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigation_mypage"
-        android:name="com.remine.ui.mypage.MypageFragment"
-        android:label="@string/title_mypage"
-        tools:layout="@layout/fragment_mypage" />
 </navigation>
