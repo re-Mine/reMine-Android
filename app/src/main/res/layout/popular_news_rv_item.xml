@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/layout_round"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/popularNews1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다. ..." />
+
+        <TextView
+            android:id="@+id/nickName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:text="닉네임1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/layout_round"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/popularNews2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다. ..." />
+
+        <TextView
+            android:id="@+id/nickName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:text="닉네임2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/layout_round"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/popularNews3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다. ..." />
+
+        <TextView
+            android:id="@+id/nickName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:text="닉네임3" />
+    </LinearLayout>
+
+</LinearLayout>

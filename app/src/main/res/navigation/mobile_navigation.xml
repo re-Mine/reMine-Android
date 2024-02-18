@@ -35,7 +35,9 @@
         android:id="@+id/navigation_community"
         android:name="com.remine.ui.community.CommunityFragment"
         android:label="@string/title_community"
-        tools:layout="@layout/fragment_community" />
+        tools:layout="@layout/fragment_community" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_mypage"
