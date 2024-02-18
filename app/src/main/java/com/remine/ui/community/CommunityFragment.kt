@@ -21,7 +21,7 @@ class CommunityFragment : Fragment() {
     private var _binding: FragmentCommunityBinding? = null
 
     // This property is only valid between onCreateView and
-    // onDestroyView.
+// onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -54,8 +54,8 @@ class CommunityFragment : Fragment() {
         newsRv.adapter = newsRvAdapter
 
         binding.buttonMoveToCareer.setOnClickListener{
-                val intent = Intent(context, CareerPreviewActivity::class.java)
-                startActivity(intent)
+            val intent = Intent(context, CareerPreviewActivity::class.java)
+            startActivity(intent)
         }
 
         // 프래그먼트 화면 전환 - 소식 확인하기 페이지로 이동
@@ -79,15 +79,15 @@ class CommunityFragment : Fragment() {
         }
 
         // 뷰페이저2
-        // binding.viewPagerDeclaration.adapter = DeclarationViewPagerAdapter(getDeclarationList()) // 어댑터 생성
+        binding.viewPagerDeclaration.adapter = NewsDeclarationViewPagerAdapter(getDeclarationList(), requireContext()) // 어댑터 생성
         // 가로 방향
-        // binding.viewPagerDeclaration.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        binding.viewPagerDeclaration.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
         return root
     }
 
     private fun getDeclarationList(): ArrayList<Int> {
-        return arrayListOf<Int>(R.layout.declaration_list_item, R.layout.declaration_list_item)
+        return arrayListOf<Int>(R.layout.declaration_list_item, R.layout.declaration_list_item, R.layout.declaration_list_item)
     }
 
 
