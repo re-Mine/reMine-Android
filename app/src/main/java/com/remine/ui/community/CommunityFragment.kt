@@ -1,13 +1,20 @@
 package com.remine.ui.community
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
+import com.remine.R
 import com.remine.databinding.FragmentCommunityBinding
+import com.remine.ui.community.career.CareerPreviewActivity
+import com.remine.ui.community.career.CareerRVAdapter
+import com.remine.ui.community.news.NewsFragment
+import com.remine.ui.community.news.PopularNewsRVAdapter
 
 class CommunityFragment : Fragment() {
 
@@ -28,15 +35,65 @@ class CommunityFragment : Fragment() {
         _binding = FragmentCommunityBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textCommunity
-        communityViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        // 커리어 데이터 리사이클러뷰
+        val careerRv : RecyclerView = binding.careerRecyclerView
+
+        val carrerItems = ArrayList<String>()
+        carrerItems.add("image")
+
+        val careerRvAdapter = CareerRVAdapter(carrerItems)
+        careerRv.adapter = careerRvAdapter
+
+        // 소식 확인하기 리사이클러뷰
+        val newsRv : RecyclerView = binding.popularNewsRecyclerView
+
+        val newsItems = ArrayList<String> ()
+        newsItems.add("text")
+
+        val newsRvAdapter = PopularNewsRVAdapter(newsItems)
+        newsRv.adapter = newsRvAdapter
+
+        binding.buttonMoveToCareer.setOnClickListener{
+                val intent = Intent(context, CareerPreviewActivity::class.java)
+                startActivity(intent)
         }
+
+        // 프래그먼트 화면 전환 - 소식 확인하기 페이지로 이동
+        // val bundle = Bundle()
+        val newFragment = NewsFragment()
+
+        // newFragment.arguments = bundle
+
+        binding.buttonCheckNews.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_community, newFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+        binding.buttonMoveToNews.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_community, newFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+        // 뷰페이저2
+        // binding.viewPagerDeclaration.adapter = DeclarationViewPagerAdapter(getDeclarationList()) // 어댑터 생성
+        // 가로 방향
+        // binding.viewPagerDeclaration.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
         return root
     }
+
+    private fun getDeclarationList(): ArrayList<Int> {
+        return arrayListOf<Int>(R.layout.declaration_list_item, R.layout.declaration_list_item)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
