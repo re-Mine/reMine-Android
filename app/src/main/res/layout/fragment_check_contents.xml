@@ -32,7 +32,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="#000000"
                     android:textSize="40dp"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/ibm_semibold"
                     android:text="소식 확인하기" />
 
             </LinearLayout>

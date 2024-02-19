@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다. ..." />
+            android:fontFamily="@font/ibm_medium"
+            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다..." />
 
         <TextView
             android:id="@+id/nickName1"
@@ -26,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="15dp"
-            android:text="닉네임1" />
+            android:fontFamily="@font/ibm_medium"
+            android:text="배부른 사자" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다. ..." />
+            android:fontFamily="@font/ibm_medium"
+            android:text="안녕하세요! 최근 경기 가나다에서 입원 치료를 진행했고 관련하여 후기를 작성하고자 합니다... " />
 
         <TextView
             android:id="@+id/nickName2"
@@ -51,7 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="15dp"
-            android:text="닉네임2" />
+            android:fontFamily="@font/ibm_medium"
+            android:text="졸린 까마귀" />
 
     </LinearLayout>
 
@@ -69,7 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 전달해드리고자 합니다. ..." />
+            android:fontFamily="@font/ibm_medium"
+            android:text="혹시 선언 같이 하실 분 계신가요? 혼자 하다보니 자꾸 까먹어서 오픈 채팅방 같은거 파서..." />
 
         <TextView
             android:id="@+id/nickName3"
@@ -77,7 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginTop="15dp"
-            android:text="닉네임3" />
+            android:fontFamily="@font/ibm_medium"
+            android:text="웃는 기린" />
     </LinearLayout>
 
 </LinearLayout>
