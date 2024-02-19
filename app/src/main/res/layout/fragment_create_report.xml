@@ -48,7 +48,7 @@
                     android:layout_weight="12"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/report_button_round"
-                    tools:text="기관"/>
+                    android:entries="@array/centerList"/>
 
                 <Button
                     android:id="@+id/buttonCreateReport"
