@@ -92,7 +92,7 @@ class CommunityFragment : Fragment() {
     }
 
     private fun getDeclarationList(): ArrayList<Int> {
-        return arrayListOf<Int>(R.layout.declaration_list_item, R.layout.declaration_list_item, R.layout.declaration_list_item)
+        return arrayListOf<Int>(R.layout.declaration_list_item1, R.layout.declaration_list_item2, R.layout.declaration_list_item3)
     }
 
 
