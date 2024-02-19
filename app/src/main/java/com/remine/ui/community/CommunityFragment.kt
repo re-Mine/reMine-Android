@@ -83,6 +83,8 @@ class CommunityFragment : Fragment() {
         // 가로 방향
         binding.viewPagerDeclaration.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
+        binding.indicatorDeclaration.setViewPager(binding.viewPagerDeclaration)
+
         return root
     }
 
