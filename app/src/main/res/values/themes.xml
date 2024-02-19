@@ -15,18 +15,17 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <!-- 상태바 색상 변경-->
-        <item name="android:statusBarColor">#FBBC05</item>
         <!-- Customize your theme here. -->
     </style>
     
-    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <!-- API 31+ specific attributes -->
-        <item name="android:windowSplashScreenBackground">#FFF0F2</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/icon_splash</item>
-        <item name="windowSplashScreenAnimationDuration">3000</item>
-        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
-        <item name="android:windowSplashScreenBrandingImage">@mipmap/icon_splash</item>
-    </style>
+<!--    <style name="Theme.App.Starting" parent="Theme.SplashScreen">-->
+<!--        &lt;!&ndash; API 31+ specific attributes &ndash;&gt;-->
+<!--        <item name="android:windowSplashScreenBackground">#FFF0F2</item>-->
+<!--        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/icon_splash</item>-->
+<!--        <item name="windowSplashScreenAnimationDuration">3000</item>-->
+<!--        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>-->
+<!--        <item name="android:windowSplashScreenBrandingImage">@mipmap/icon_splash</item>-->
+<!--    </style>-->
 
     <style name="Widget.MyApp.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <!-- 클릭 시 표시되는 그림자 효과 비활성화 -->

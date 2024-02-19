@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import com.remine.R
 import com.remine.databinding.FragmentMoodWritingBinding
 
 private const val ARG_PARAM = "date"
@@ -40,6 +42,9 @@ class MoodWritingFragment : Fragment() {
 
         binding.tvSave.setOnClickListener {
 //            requireActivity().findViewById<TextView>(R.id.tv_diary).text = binding.etDiary.text
+            val text = binding.tvRating.text.toString() + " : " +binding.ratingBar.rating.toString() + "\n" + binding.tvRating2.text.toString() + " : " +binding.ratingBar2.rating.toString() + "\n" + binding.tvRating3.text.toString() + " : " +binding.ratingBar3.rating.toString()+ "\n" + binding.tvRating4.text.toString() + " : " +binding.ratingBar4.rating.toString()+ "\n" + binding.tvRating5.text.toString() + " : " +binding.ratingBar5.rating.toString()+ "\n" + binding.tvRating6.text.toString() + " : " +binding.ratingBar6.rating.toString()
+
+            requireActivity().findViewById<TextView>(R.id.tv_diary2).text = text
             requireActivity().onBackPressed()
         }
         return root

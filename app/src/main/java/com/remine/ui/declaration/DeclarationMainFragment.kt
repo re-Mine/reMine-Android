@@ -3,6 +3,8 @@ package com.remine.ui.declaration
 import android.app.Activity
 import android.graphics.Color
 import android.graphics.Point
+import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
@@ -12,19 +14,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.HorizontalScrollView
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.media3.exoplayer.source.MediaSource
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.navigation.NavigationView
 import com.remine.R
 import com.remine.databinding.FragmentDeclarationMainBinding
 import com.remine.retrofit.RESPONSE_STATE
 import com.remine.retrofit.RetrofitManager
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
-class DeclarationMainFragment : Fragment() {
+class DeclarationMainFragment : Fragment(), DeclarationAdapter.OnItemClickListener {
 
     private var _binding: FragmentDeclarationMainBinding? = null
 
+    var bundle: Bundle? = null
+
     private val binding get() = _binding!!
+
+    private var timeText = SpannableStringBuilder()
 
 //    val declarationViewModel =
 //        ViewModelProvider(this).get(DeclarationViewModel::class.java)
@@ -45,6 +55,25 @@ class DeclarationMainFragment : Fragment() {
                 RESPONSE_STATE.OKAY -> {
                     val resultData = result?.result?.declarationList
                     init(resultData!!)
+
+                    timeText = SpannableStringBuilder(binding.tvDeclDescription.text.toString())
+                    val startIndex = timeText.indexOf("총")+2
+                    val endIndex = timeText.indexOf("번")
+                    timeText.replace(startIndex, endIndex, result?.result.declarationList.size.toString())
+
+                    binding.tvDeclDescription.text = timeText
+
+//                    timeText = SpannableStringBuilder(binding.tvTop.text.toString())
+//                    val startIndex2 = 0
+//                    val endIndex2 = timeText.indexOf("님")
+//                    timeText.replace(startIndex2, endIndex2, result.result.memberName)
+//                    binding.tvTop.text = timeText
+                    setTextColor()
+
+//                    Log.d("membername", result.result.memberName + " " + result.result.todayParticipantsCount.toString())
+//                    bundle?.putString("memberName", result.result.memberName)
+//                    bundle?.putInt("participants", result.result.todayParticipantsCount)
+
                     Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 성공 ${result.toString()}")
                 }
                 RESPONSE_STATE.FAIL -> {
@@ -61,6 +90,7 @@ class DeclarationMainFragment : Fragment() {
 
         binding.btnDeclaration.setOnClickListener {
             val newFragment = DeclarationRecordingFragment()
+            newFragment.arguments = bundle
             val transaction = parentFragmentManager.beginTransaction()
             transaction.setCustomAnimations(
                 android.R.anim.fade_in,  // Fragment가 추가될 때 애니메이션
@@ -76,8 +106,7 @@ class DeclarationMainFragment : Fragment() {
         }
 
         binding.btnHowToDeclaration.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString("isGuide", "true")
+            bundle?.putString("isGuide", "true")
             val newFragment = DeclartionGuideFragment()
             newFragment.arguments = bundle
             val transaction = parentFragmentManager.beginTransaction()
@@ -96,6 +125,7 @@ class DeclarationMainFragment : Fragment() {
         }
         return root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -129,6 +159,7 @@ class DeclarationMainFragment : Fragment() {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             val declarationAdapter = DeclarationAdapter(resultData)
+            declarationAdapter.setOnItemClickListener(this@DeclarationMainFragment)
             adapter = declarationAdapter
         }
     }
@@ -147,25 +178,25 @@ class DeclarationMainFragment : Fragment() {
     private fun setTextColor() {
         // 특정 글자를 다른 색상으로 변경하기 위해 SpannableStringBuilder 사용
         val coloredTitleText = binding.tvTop.text.toString()
-        var spannableText = SpannableStringBuilder(coloredTitleText)
-        var startIndex = spannableText.indexOf("선언")
+        timeText = SpannableStringBuilder(coloredTitleText)
+        var startIndex = timeText.indexOf("선언")
         var endIndex = startIndex + "선언".length
         var color = Color.parseColor("#4285F4") // 리소스에서 색상 가져오기
-        spannableText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        startIndex = spannableText.indexOf("다짐")
+        timeText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        startIndex = timeText.indexOf("다짐")
         endIndex = startIndex + "다짐".length
         color = Color.parseColor("#EA4335") // 리소스에서 색상 가져오기
-        spannableText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        binding.tvTop.text = spannableText
+        timeText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.tvTop.text = timeText
         //binding.tvTop.setTextSize(standardSize_X.toFloat() / 15)
 
         val coloredPastText = binding.tvDeclDescription.text.toString()
-        spannableText = SpannableStringBuilder(coloredPastText)
+        val spannableText = SpannableStringBuilder(coloredPastText)
         startIndex = spannableText.indexOf("지난")+2
         endIndex = spannableText.indexOf("일동안")
         color = Color.parseColor("#34A853")
         spannableText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        startIndex = spannableText.indexOf("총 ")+1
+        startIndex = spannableText.indexOf("총")+ 1
         endIndex = spannableText.indexOf("을")
         color = Color.parseColor("#EA4335")
         spannableText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -195,5 +226,21 @@ class DeclarationMainFragment : Fragment() {
         standardSize_X = (ScreenSize!!.x / density).toInt()
         standardSize_Y = (ScreenSize.y / density).toInt()
     }
-}
 
+    override fun onItemClick(item: String) {
+        Log.d("onItemClick","$item")
+
+        val mediaPlayer = MediaPlayer().apply {
+            setDataSource(requireContext(), Uri.parse(item))
+        }
+        mediaPlayer.setVolume(0.5f, 0.5f)
+        mediaPlayer.prepare()
+        mediaPlayer.start()
+        mediaPlayer.isLooping = false
+        if(!mediaPlayer.isPlaying) {
+            mediaPlayer.stop()      //음악 정지
+            mediaPlayer.release()   //자원 해제
+            mediaPlayer.reset()
+        }
+    }
+}

@@ -59,6 +59,8 @@ class DeclarationRecordingFragment : Fragment() {
         Manifest.permission.READ_EXTERNAL_STORAGE
     )
     private var isGuide: String? = null
+    private var participants: Int? = null
+    private var membername: String? = null
 
     private var _binding: FragmentDeclarationRecordingBinding? = null
 
@@ -66,20 +68,54 @@ class DeclarationRecordingFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            isGuide = it.getString(ARG_PARAM1)
-        }
+
+//        isGuide = arguments?.getString(ARG_PARAM1)
+//        participants = arguments?.getInt("participants")
+//        membername = arguments?.getString("memberName")
+
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = FragmentDeclarationRecordingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //fileName = "${requireContext().filesDir}/audiorecordtest.3gp"
-        fileName = Date().time.toString()+".mp3"
+        RetrofitManager.instance.getDeclarations(){
+                state, result ->
+            when(state){
+                RESPONSE_STATE.OKAY -> {
+                    val resultData = result?.result
+
+//                    var timeText = SpannableStringBuilder(binding.tvTop.text.toString())
+//                    val startIndex2 = 0
+//                    val endIndex2 = timeText.indexOf("님")
+//                    timeText.replace(startIndex2, endIndex2, resultData?.memberName)
+//                    binding.tvTop.text = timeText
+
+                    val timeText = SpannableStringBuilder(binding.tvDeclPeople.text.toString())
+                    val startIndex = timeText.indexOf("오늘도")+4
+                    val endIndex = timeText.indexOf("명")
+                    timeText.replace(startIndex, endIndex, resultData?.todayParticipantsCount.toString())
+
+                    binding.tvDeclPeople.text = timeText
+
+                    setTextColor()
+                    Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 성공 ${result.toString()}")
+                }
+                RESPONSE_STATE.FAIL -> {
+                    Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 실패")
+                }
+
+                else -> {}
+            }
+        }
+
+        fileName = "${requireContext().filesDir}/audiorecordtest.3gp"
+        //fileName = Date().time.toString()+".mp3"
 
         ActivityCompat.requestPermissions(super.requireActivity(), permissions, REQUEST_RECORD_AUDIO_PERMISSION)
 
@@ -251,23 +287,24 @@ class DeclarationRecordingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (isGuide == "true") {
-            isGuide = "false"
-            //showGuidance()
-        }
+//        if (isGuide == "true") {
+//            isGuide = "false"
+//            //showGuidance()
+//        }
+    }
 
-        // 특정 글자를 다른 색상으로 변경하기 위해 SpannableStringBuilder 사용
+    private fun setTextColor() {
         val coloredTitleText = binding.tvTop.text.toString()
-        var spannableText = SpannableStringBuilder(coloredTitleText)
-        var startIndex = spannableText.indexOf("선언")
+        val timeText = SpannableStringBuilder(coloredTitleText)
+        var startIndex = timeText.indexOf("선언")
         var endIndex = startIndex + "선언".length
         var color = Color.parseColor("#4285F4") // 리소스에서 색상 가져오기
-        spannableText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        startIndex = spannableText.indexOf("다짐")
+        timeText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        startIndex = timeText.indexOf("다짐")
         endIndex = startIndex + "다짐".length
         color = Color.parseColor("#EA4335") // 리소스에서 색상 가져오기
-        spannableText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        binding.tvTop.text = spannableText
+        timeText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.tvTop.text = timeText
     }
 
     private fun showGuidance() {

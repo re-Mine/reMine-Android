@@ -61,7 +61,9 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         app:layout_constraintWidth_percent="1"
-                        app:tabIndicatorColor="@color/white">
+                        app:tabIndicatorColor="@color/black"
+                        app:tabIndicatorHeight="1dp"
+                        app:tabIndicatorFullWidth="false">
 
                         <com.google.android.material.tabs.TabItem
                             android:layout_width="wrap_content"
