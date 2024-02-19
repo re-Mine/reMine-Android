@@ -2,7 +2,7 @@ package com.remine.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+//import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.remine.R
 import com.remine.databinding.ActivityLoginBinding
 
@@ -10,7 +10,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
     private lateinit var LoginFragment: LoginFragment
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
+        //installSplashScreen()
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)

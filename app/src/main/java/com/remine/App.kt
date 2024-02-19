@@ -12,8 +12,10 @@ class App : Application() {
 
         lateinit var sharedPreferences: SharedPreferences
 
-        var accessToken:String? = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4MzM4NTA2fQ.582eUuCOU_-BuqDsxxwsPOYI3EO_VPEPzA8CaUlyoVCeuhxSbJkRAOiB7OfkM1YwInPaNtMEDWnCSDeT_Dt4Aw"
-        var refreshToken:String? = "yJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4OTI1MzA2fQ.bniLIibySkWc1XYem9Y5Mryn3zkVUMtWsYz51FC7wqXXB94fYjwTphB5idfimFRXbR4mIrppVHDAqxFZ9dHWVg"
+        var accessToken:String? = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4MzcxNjc4fQ.VJgUYTIJ7GT7cZf__cnIcHgIpdwz1Uzft5cHLdwSGyb9NKgTOr6htHWEoegz-Pltan9Rj6WL_ge2RRtJtoVt7w"
+        var refreshToken:String? = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4OTI1MzA2fQ.bniLIibySkWc1XYem9Y5Mryn3zkVUMtWsYz51FC7wqXXB94fYjwTphB5idfimFRXbR4mIrppVHDAqxFZ9dHWVg"
+
+        var userName:String? = "OO"
     }
 
     override fun onCreate() {
@@ -34,6 +36,11 @@ class App : Application() {
         sharedPreferences?.edit()?.putString("refresh_token", refreshToken)?.apply()
 
         App.refreshToken = sharedPreferences?.getString("refresh_token", null)
+
+        val userName = userName
+        sharedPreferences?.edit()?.putString("user_name", userName)?.apply()
+
+        App.userName = sharedPreferences?.getString("user_name", "OO")
     }
 
 }
