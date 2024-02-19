@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="20dp"
+    tools:context=".ui.home.MoodWritingFragment"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp">
+                    <TextView
+                        android:id="@+id/buttonBack"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="X"
+                        android:textSize="24sp"
+                        android:textColor="#8C8C8C"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024년 1월 21일"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/gowun_dodum_regular"
+                        android:textColor="@color/black"
+                        android:layout_weight="6"/>
+
+                    <TextView
+                        android:id="@+id/tv_save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="저장"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/gowun_dodum_regular"
+                        android:textColor="#34A853"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/layoutLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="#BDBDBD" />
+
+                <EditText
+                    android:id="@+id/tv_mood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:gravity="top"
+                    android:hint="오늘 감정을 기록해요!"
+                    android:fontFamily="@font/gowun_dodum_regular"
+                    android:textColor="#747474" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="분노"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/ibm_medium"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingBar"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="0.5"
+                        style="@style/CustomRatingBar"
+                        android:paddingRight="62dp"
+                        android:paddingLeft="120dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_rating"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="외로움"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/ibm_medium"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingBar2"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="0.5"
+                        style="@style/CustomRatingBar"
+                        android:paddingRight="62dp"
+                        android:paddingLeft="120dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_rating2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="압박감"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/ibm_medium"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingBar3"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="0.5"
+                        style="@style/CustomRatingBar"
+                        android:paddingRight="62dp"
+                        android:paddingLeft="120dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_rating3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="피로"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/ibm_medium"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingBar4"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar4"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="0.5"
+                        style="@style/CustomRatingBar"
+                        android:paddingRight="62dp"
+                        android:paddingLeft="120dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_rating4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="힘듦"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/ibm_medium"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingBar5"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar5"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="0.5"
+                        style="@style/CustomRatingBar"
+                        android:paddingRight="62dp"
+                        android:paddingLeft="120dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_rating5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="320dp"
+                    android:layout_height="1dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:background="#BDBDBD" />
+
+                <EditText
+                    android:id="@+id/tv_desire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:background="@android:color/transparent"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:gravity="top"
+                    android:hint="오늘 갈망이 왔나요?"
+                    android:fontFamily="@font/gowun_dodum_regular"
+                    android:textColor="#747474" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_rating6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="갈망"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/ibm_medium"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="30dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/ratingBar6"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar6"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0"
+                        android:stepSize="0.5"
+                        style="@style/CustomRatingBar"
+                        android:paddingRight="62dp"
+                        android:paddingLeft="120dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_rating6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    </FrameLayout>
