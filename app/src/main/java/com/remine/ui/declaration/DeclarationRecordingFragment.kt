@@ -1,10 +1,8 @@
 package com.remine.ui.declaration
 
 import android.Manifest
-import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.os.Bundle
@@ -15,18 +13,21 @@ import android.text.style.ForegroundColorSpan
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.remine.R
 import com.remine.databinding.FragmentDeclarationRecordingBinding
+import com.remine.retrofit.RESPONSE_STATE
+import com.remine.retrofit.RetrofitManager
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
+import java.io.File
 import java.io.IOException
 import java.util.Date
 
@@ -77,7 +78,8 @@ class DeclarationRecordingFragment : Fragment() {
         _binding = FragmentDeclarationRecordingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        fileName = "${requireContext().filesDir}/audiorecordtest.3gp"
+        //fileName = "${requireContext().filesDir}/audiorecordtest.3gp"
+        fileName = Date().time.toString()+".mp3"
 
         ActivityCompat.requestPermissions(super.requireActivity(), permissions, REQUEST_RECORD_AUDIO_PERMISSION)
 
@@ -196,6 +198,36 @@ class DeclarationRecordingFragment : Fragment() {
             state = false
             isRecording = false
             binding.ibMic.setImageResource(R.drawable.btn_mic)
+
+            //val body = MultipartBody.Part.createFormData("file", file.name, requestFile)  //파일이름, 파일
+            //val filedata: IRetrofit.Filedata = IRetrofit.Filedata(file.name, requestFile)
+
+            val file = File(outputPath)
+
+            val requestFile = RequestBody.create("audio/*".toMediaTypeOrNull(), file)
+
+            val filePart = MultipartBody.Part.createFormData("file", fileName, RequestBody.create("audio/*".toMediaTypeOrNull(), file))
+
+            val requestBody = MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("content", "fileName")
+                .build()
+
+            RetrofitManager.instance.postDeclarations(
+                filedata = filePart,
+                content = requestBody
+            ) { responseState ->
+                when (responseState) {
+                    RESPONSE_STATE.OKAY -> {
+                        Log.d("retrofit", "postDeclarations api : ${responseState}")
+                    }
+
+                    RESPONSE_STATE.FAIL -> {
+                        Log.d("retrofit", "postDeclarations api 호출 에러")
+                    }
+                }
+            }
+
             Toast.makeText(requireContext(), "녹음이 완료되었습니다.", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(requireContext(), "녹음 상태가 아닙니다.", Toast.LENGTH_SHORT).show()
