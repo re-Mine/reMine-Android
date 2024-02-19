@@ -35,7 +35,9 @@ class TodayWritingFragment : Fragment() {
         val root: View = binding.root
 
         binding.tvDate.text = date
-        binding.etDiary.setText(requireActivity().findViewById<TextView>(R.id.tv_diary).text)
+        if (requireActivity().findViewById<TextView>(R.id.tv_diary).text != binding.etDiary.hint) {
+            binding.etDiary.setText(requireActivity().findViewById<TextView>(R.id.tv_diary).text)
+        }
 
         binding.buttonBack.setOnClickListener {
             requireActivity().onBackPressed()
