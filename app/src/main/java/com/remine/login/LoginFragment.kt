@@ -8,15 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
+// import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.remine.MainActivity
 import com.remine.R
 import com.remine.databinding.FragmentLoginBinding
-import com.remine.retrofit.RESPONSE_STATE
+// import com.remine.retrofit.RESPONSE_STATE
 
 class LoginFragment : Fragment() {
 
-    private lateinit var mGoogleSignInClient: GoogleSignInClient
+    // private lateinit var mGoogleSignInClient: GoogleSignInClient
     private val RC_SIGN_IN = 9001
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
