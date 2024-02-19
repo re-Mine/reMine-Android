@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.tabs.TabLayoutMediator
 import com.remine.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -40,13 +41,17 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
 
-        val adapter = ReportAdapter(childFragmentManager)
+        val adapter = ReportAdapter(childFragmentManager, lifecycle)
 
         adapter.addFragment(WriteReportFragment(), "작성하기")
         adapter.addFragment(MonthlyReportFragment(), "한 달의 기록")
         adapter.addFragment(CreateReportFragment(), "보고서 생성")
+
         _binding?.reportViewPager?.adapter = adapter
-        _binding?.reportTabLayout?.setupWithViewPager(_binding?.reportViewPager)
+
+        TabLayoutMediator(binding.reportTabLayout, binding.reportViewPager) { tab, position ->
+            // Tab configuration.
+        }.attach()
 
         return root
     }
