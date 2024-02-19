@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         _binding?.reportViewPager?.adapter = adapter
 
         TabLayoutMediator(binding.reportTabLayout, binding.reportViewPager) { tab, position ->
-            // Tab configuration.
+            tab.text = adapter.getPageTitle(position)
         }.attach()
 
         return root
