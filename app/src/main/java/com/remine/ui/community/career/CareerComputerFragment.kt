@@ -27,8 +27,11 @@ class CareerComputerFragment : Fragment() {
         _binding = FragmentCareerComputerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.ButtonApply.setOnClickListener{
+        // 다이얼로그 띄우기
+        val newFragment = ApplyDialog()
 
+        binding.ButtonApply.setOnClickListener{
+            newFragment.show(childFragmentManager, "applyDialog")
         }
 
         return root
@@ -39,29 +42,4 @@ class CareerComputerFragment : Fragment() {
         _binding = null
     }
 
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        _binding = FragmentCareerComputerBinding.inflate(layoutInflater)
-        FragmentCareerComputerBinding(binding.root)
-
-        binding.ButtonHome.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.ButtonApply.setOnClickListener{
-            applyDialog = ApplyDialog(this, this)
-            applyDialog?.show()
-        }
-
-    }
-
-    // 일정 추가 버튼 클릭
-    override fun onAddScheduleBtnClicked() {
-        val confirmDialog = ConfirmDialog(this)
-
-        applyDialog?.dismiss()
-        confirmDialog.show()
-    }*/
 }

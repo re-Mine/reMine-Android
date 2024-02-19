@@ -1,29 +1,40 @@
 package com.remine.ui.community.career.dialog
 
-import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.remine.databinding.ApplyDialogBinding
 
-class ApplyDialog(context: Context, applyDialogInterface: ApplyDialogInterface) : Dialog(context) {
-
-    private var _binding : ApplyDialogBinding? = null
-    private val binding get() = _binding!!
-
-    private var applyDialogInterface:ApplyDialogInterface? = null
-
-    // 인터페이스 연결
-    init {
-        this.applyDialogInterface = applyDialogInterface
-    }
+class ApplyDialog : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ApplyDialogBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        //false로 설정해 주면 화면밖 혹은 뒤로가기 버튼시 다이얼로그라 dismiss 되지 않는다.
+        isCancelable = true
+    }
 
-        binding.ButtonAddSchedule.setOnClickListener{
-            this.applyDialogInterface?.onAddScheduleBtnClicked()
+    private lateinit var binding: ApplyDialogBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = ApplyDialogBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val newFragment = ConfirmDialog()
+
+        binding.ButtonAddSchedule.setOnClickListener {
+            // ApplyDialog만 닫을 수 있도록 수정 childFragmentManager -> parentFragmentManager
+            newFragment.show(parentFragmentManager, "confirmDialog")
+            dismiss()
         }
     }
 }

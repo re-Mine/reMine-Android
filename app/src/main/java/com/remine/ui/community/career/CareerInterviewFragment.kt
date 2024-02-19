@@ -1,5 +1,6 @@
 package com.remine.ui.community.career
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,8 +25,11 @@ class CareerInterviewFragment : Fragment() {
         _binding = FragmentCareerInterviewBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.ButtonApply.setOnClickListener{
+        // 다이얼로그 띄우기
+        val newFragment = ApplyDialog()
 
+        binding.ButtonApply.setOnClickListener{
+            newFragment.show(childFragmentManager, "applyDialog")
         }
 
         return root
@@ -36,29 +40,4 @@ class CareerInterviewFragment : Fragment() {
         _binding = null
     }
 
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        _binding = FragmentCareerGedBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.ButtonHome.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.ButtonApply.setOnClickListener{
-            applyDialog = ApplyDialog(this, this)
-            applyDialog?.show()
-        }
-
-    }
-
-    // 일정 추가 버튼 클릭시 이벤트 - 이전 다이얼로그 종료, 새 다이얼로그 시작
-    override fun onAddScheduleBtnClicked() {
-        val confirmDialog = ConfirmDialog(this)
-
-        applyDialog?.dismiss()
-        confirmDialog.show()
-    }*/
 }
