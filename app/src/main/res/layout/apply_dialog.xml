@@ -46,6 +46,7 @@
             android:layout_marginLeft="110dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/button_round"
+            android:backgroundTint="@color/colorCommunityPrimary"
             android:text="추가할래요!"
             android:textSize="15dp"
             android:textStyle="bold" />

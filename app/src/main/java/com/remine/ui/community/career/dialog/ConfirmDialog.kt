@@ -1,20 +1,28 @@
 package com.remine.ui.community.career.dialog
 
-import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import com.remine.databinding.ConfirmDialogBinding
 
-class ConfirmDialog (context: Context) : Dialog(context) {
-
-    private var _binding : ConfirmDialogBinding? = null
-    private val binding get() = _binding!!
+class ConfirmDialog : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ConfirmDialogBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        //false로 설정해 주면 화면밖 혹은 뒤로가기 버튼시 다이얼로그라 dismiss 되지 않는다.
+        isCancelable = true
+    }
 
+    private lateinit var binding: ConfirmDialogBinding
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = ConfirmDialogBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }
