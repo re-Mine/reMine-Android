@@ -80,4 +80,7 @@ dependencies {
     // indicator - viewpager2
     implementation ("me.relex:circleindicator:2.1.6")
 
+// calendarview
+    implementation("com.github.prolificinteractive:material-calendarview:1.4.3")
 }
+

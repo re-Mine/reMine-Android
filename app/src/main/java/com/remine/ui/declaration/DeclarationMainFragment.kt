@@ -32,15 +32,10 @@ class DeclarationMainFragment : Fragment() {
         _binding = FragmentDeclarationMainBinding.inflate(inflater, container, false)
         val root: View = binding.root
         getStandardSize()
-       // val textView: TextView = binding.textDeclaration
-//        declarationViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-
         setTextColor()
 
         val layoutParams = binding.constraintLayout.layoutParams
-        layoutParams.height = screenSize_Y / 2
+        layoutParams.height = screenSize_Y / 2 + 80
         binding.constraintLayout.layoutParams = layoutParams
 
         binding.btnDeclaration.setOnClickListener {

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.remine.ui.home.HomeFragment">
+    tools:context="com.remine.ui.home.HomeFragment"
+    android:id="@+id/fragment_home">
 
     <LinearLayout
         android:id="@+id/bannerReport"
@@ -74,8 +75,8 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/reportViewPager"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            app:layout_constraintWidth_percent="1" />
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
