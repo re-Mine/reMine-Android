@@ -2,6 +2,7 @@ package com.remine.retrofit
 
 import android.util.Log
 import com.google.gson.JsonElement
+import com.remine.ui.declaration.DeclarationResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -18,20 +19,20 @@ class RetrofitManager {
     private val iRetrofit: IRetrofit? =
         RetrofitClient.getClient(API.BASE_URL)?.create(IRetrofit::class.java)
     private val Retrofit: IRetrofit? =
-        RetrofitClient.getClient2("")?.create(IRetrofit::class.java)
+        RetrofitClient.getClient2(API.BASE_URL)?.create(IRetrofit::class.java)
 
 
     // 상황별 추천경험 조회 api
     fun getDeclarations(
-        completion: (RESPONSE_STATE, JsonElement?) -> Unit
+        completion: (RESPONSE_STATE, DeclarationResponse?) -> Unit
     ) {
         val call =
             iRetrofit?.getDeclarations()
                 ?: return
 
-        call.enqueue(object : Callback<JsonElement> {
+        call.enqueue(object : Callback<DeclarationResponse> {
             // 응답 성공
-            override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
+            override fun onResponse(call: Call<DeclarationResponse>, response: Response<DeclarationResponse>) {
                 Log.d(
                     "retrofit",
                     "RetrofitManager - onResponse() called / response : ${response.code()}"
@@ -50,7 +51,7 @@ class RetrofitManager {
             }
 
             // 응답 실패
-            override fun onFailure(call: Call<JsonElement>, t: Throwable) {
+            override fun onFailure(call: Call<DeclarationResponse>, t: Throwable) {
                 Log.d("retrofit", "RetrofitManager - onFailure() called / t: $t")
                 completion(RESPONSE_STATE.FAIL, null)
             }

@@ -7,13 +7,18 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.HorizontalScrollView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.remine.R
 import com.remine.databinding.FragmentDeclarationMainBinding
+import com.remine.retrofit.RESPONSE_STATE
+import com.remine.retrofit.RetrofitManager
+import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 class DeclarationMainFragment : Fragment() {
 
@@ -33,6 +38,22 @@ class DeclarationMainFragment : Fragment() {
         val root: View = binding.root
         getStandardSize()
         setTextColor()
+
+        RetrofitManager.instance.getDeclarations(){
+            state, result ->
+            when(state){
+                RESPONSE_STATE.OKAY -> {
+                    val resultData = result?.result?.declarationList
+                    init(resultData!!)
+                    Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 성공 ${result.toString()}")
+                }
+                RESPONSE_STATE.FAIL -> {
+                    Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 실패")
+                }
+
+                else -> {}
+            }
+        }
 
         val layoutParams = binding.constraintLayout.layoutParams
         layoutParams.height = screenSize_Y / 2 + 80
@@ -79,19 +100,23 @@ class DeclarationMainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val declarationList = mutableListOf(
-            Declaration("1월 5일", "내 삶의 주인공은\n나다"),
-            Declaration("1월 8일", "내일을 위해\n오늘의 선택에\n헌신하자"),
-            Declaration("1월 10일", "최고의 버전으로\n변화하며,\n삶의 아름다움을\n찾아가자."),
-        )
-
-        binding.rvDeclaration.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        val adapter = DeclarationAdapter(declarationList)
-        binding.rvDeclaration.adapter = adapter
+//        val declarationList = mutableListOf(
+//            Declaration(1,"1월 5일", "내 삶의 주인공은\n나다","선언 다시 듣기"),
+//            Declaration(2,"1월 8일", "내일을 위해\n오늘의 선택에\n헌신하자","선언 다시 듣기"),
+//            Declaration(3,"1월 10일", "최고의 버전으로\n변화하며,\n삶의 아름다움을\n찾아가자.","선언 다시 듣기"),
+//        )
+//
+//        binding.rvDeclaration.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//        val adapter = DeclarationAdapter(requireContext())
+//        adapter.datas = declarationList
+//        adapter.notifyDataSetChanged()
+//
+//        binding.rvDeclaration.adapter = adapter
 
 //        declarationViewModel.declarationList.observe(viewLifecycleOwner, { declarationList ->
 //            adapter.submitList(declarationList)
 //        })
+        //init()
     }
 
     override fun onDestroyView() {
@@ -99,6 +124,14 @@ class DeclarationMainFragment : Fragment() {
         _binding = null
     }
 
+    fun init(resultData: List<Declaration>){
+        binding.rvDeclaration.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            val declarationAdapter = DeclarationAdapter(resultData)
+            adapter = declarationAdapter
+        }
+    }
     fun navigateToOtherFragment() {
         childFragmentManager.beginTransaction()
             .setCustomAnimations(
