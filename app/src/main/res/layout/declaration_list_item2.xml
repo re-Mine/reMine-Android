@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/declaration_item_list"
+    android:id="@+id/declaration_item_list2"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -31,14 +30,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="건강한 선택이 내 힘과 행복의 원천이다."
+                    android:text="내일은 내일의 태양이 뜬다."
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="70dp"
+                    android:layout_marginRight="50dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -47,7 +46,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="2024.01.22"
+                        android:text="2024.02.19"
                         android:textColor="@color/black" />
 
                     <View
@@ -64,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="웃는 사자"
+                        android:text="졸린 사자"
                         android:textColor="@color/black" />
                 </LinearLayout>
 
@@ -97,14 +96,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="건강한 선택이 내 힘과 행복의 원천이다."
+                    android:text="피할수 없으면 즐겨라."
                     android:textColor="@color/black"
                     android:textSize="16dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="80dp"
+                    android:layout_marginRight="50dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -113,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="2024.01.22"
+                        android:text="2024.02.19"
                         android:textColor="@color/black" />
 
                     <View
@@ -130,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="웃는 사자"
+                        android:text="단호한 고양이"
                         android:textColor="@color/black" />
                 </LinearLayout>
 
@@ -170,7 +169,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="80dp"
+                    android:layout_marginRight="50dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -179,7 +178,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="2024.01.22"
+                        android:text="2024.02.18"
                         android:textColor="@color/black" />
 
                     <View
@@ -196,7 +195,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:text="웃는 사자"
+                        android:text="웃는 기러기"
                         android:textColor="@color/black" />
                 </LinearLayout>
 
