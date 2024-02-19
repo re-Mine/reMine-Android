@@ -75,7 +75,7 @@ class LoginFragment : Fragment() {
 //            val intent = Intent(activity, MainActivity::class.java)
 //            startActivity(intent)
 //            activity?.finish()
-            }
+        }
 
 
         //}
@@ -116,6 +116,9 @@ class LoginFragment : Fragment() {
 
         } catch (e: ApiException) {
             Log.w("login", "signInResult:failed code=" + e.statusCode)
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
             // 로그인 실패 시 예외 처리
         }
     }
