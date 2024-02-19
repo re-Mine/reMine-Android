@@ -1,6 +1,7 @@
 package com.remine.retrofit
 
 import com.google.gson.JsonElement
+import com.remine.ui.declaration.DeclarationResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -18,7 +19,7 @@ interface IRetrofit {
 //
 //    // 사장 회원가입
     @GET("/api/v1/declarations")
-    fun getDeclarations(): Call<JsonElement>
+    fun getDeclarations(): Call<DeclarationResponse>
 
     @Multipart
     @POST("/api/v1/declarations")
