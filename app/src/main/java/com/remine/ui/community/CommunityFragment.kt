@@ -1,6 +1,5 @@
 package com.remine.ui.community
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.remine.R
 import com.remine.databinding.FragmentCommunityBinding
-import com.remine.ui.community.career.CareerPreviewActivity
+import com.remine.ui.community.career.CareerPreviewFragment
 import com.remine.ui.community.career.CareerRVAdapter
 import com.remine.ui.community.news.NewsFragment
 import com.remine.ui.community.news.PopularNewsRVAdapter
@@ -53,27 +52,31 @@ class CommunityFragment : Fragment() {
         val newsRvAdapter = PopularNewsRVAdapter(newsItems)
         newsRv.adapter = newsRvAdapter
 
+        val newFragment1 = CareerPreviewFragment()
+
         binding.buttonMoveToCareer.setOnClickListener{
-            val intent = Intent(context, CareerPreviewActivity::class.java)
-            startActivity(intent)
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_community, newFragment1)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
         // 프래그먼트 화면 전환 - 소식 확인하기 페이지로 이동
         // val bundle = Bundle()
-        val newFragment = NewsFragment()
+        val newFragment2 = NewsFragment()
 
         // newFragment.arguments = bundle
 
         binding.buttonCheckNews.setOnClickListener{
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_community, newFragment)
+            transaction.replace(R.id.fragment_community, newFragment2)
             transaction.addToBackStack(null)
             transaction.commit()
         }
 
         binding.buttonMoveToNews.setOnClickListener{
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_community, newFragment)
+            transaction.replace(R.id.fragment_community, newFragment2)
             transaction.addToBackStack(null)
             transaction.commit()
         }

@@ -47,18 +47,18 @@
             <!-- </intent-filter> -->
         </activity>
 
-        <activity
-            android:name=".ui.community.career.CareerInterviewActivity"
+        <!--<activity
+            android:name=".ui.community.career.CareerInterviewFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.community.career.CareerComputerActivity"
+            android:name=".ui.community.career.CareerComputerFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.community.career.CareerGedActivity"
+            android:name=".ui.community.career.CareerGedFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.community.career.CareerPreviewActivity"
-            android:exported="false" />
+            android:name=".ui.community.career.CareerPreviewFragment"
+            android:exported="false" />-->
        
     </application>
 
