@@ -47,7 +47,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="12"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/report_button_round"/>
+                    android:background="@drawable/report_button_round"
+                    tools:text="기관"/>
 
                 <Button
                     android:id="@+id/buttonCreateReport"
