@@ -14,8 +14,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="OO님,\n오늘도 선언을 통해\n다짐을 이어나가요!"
-        android:textSize="28sp"
+        android:text="리마인님,\n오늘도 선언을 통해\n다짐을 이어나가요!"
+        android:textSize="22sp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +49,7 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="16sp"
             android:text="오늘도 000명의 사용자들이\n다짐을 이어나갔어요"
             android:fontFamily="@font/ibm_semibold"/>
 
@@ -66,7 +66,7 @@
             android:paddingVertical="10dp"
             android:gravity="center"
             android:background="@drawable/btn_blue"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:fontFamily="@font/ibm_semibold"/>
 
 
@@ -88,7 +88,6 @@
             android:text="오늘도 다짐하기"
             android:textSize="20sp"
             android:textColor="@color/black"
-            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:fontFamily="@font/ibm_semibold"/>
@@ -99,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="다짐 문구는 매일 바뀌어요!"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:textColor="#4285F4"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +114,7 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:text="건강한 선택이\n내 힘과 행복의 원천이다."
             android:fontFamily="@font/gowun_dodum_regular"/>
 
@@ -146,8 +145,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="선언문을 낭독하고\n다짐을 이어나가요!"
-            android:textSize="20sp"
+            android:text="선언문을 낭독하고 다짐을 이어나가요!"
+            android:textSize="14sp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
