@@ -12,7 +12,7 @@ class App : Application() {
 
         lateinit var sharedPreferences: SharedPreferences
 
-        var accessToken:String? = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4MzcxNjc4fQ.VJgUYTIJ7GT7cZf__cnIcHgIpdwz1Uzft5cHLdwSGyb9NKgTOr6htHWEoegz-Pltan9Rj6WL_ge2RRtJtoVt7w"
+        var accessToken:String? = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4MzczNTA2fQ.keJE1ToavuKonFkI-rS_pISl3N1Aqvr07bjgRnU3XvVYuYpMdmEilAzEEAFaXA8Bbfrdwa6tuEhwqn17YLRuuw"
         var refreshToken:String? = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiZXhwIjoxNzA4OTI1MzA2fQ.bniLIibySkWc1XYem9Y5Mryn3zkVUMtWsYz51FC7wqXXB94fYjwTphB5idfimFRXbR4mIrppVHDAqxFZ9dHWVg"
 
         var userName:String? = "OO"
