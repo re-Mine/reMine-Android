@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="centerList">
+        <item>기관 선택</item>
         <item>경기도 가나다</item>
         <item>서울 라마바</item>
         <item>영남권 사아자</item>
