@@ -40,12 +40,12 @@ class TodayWritingFragment : Fragment() {
         }
 
         binding.buttonBack.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
         binding.tvSave.setOnClickListener {
             requireActivity().findViewById<TextView>(R.id.tv_diary).text = binding.etDiary.text
-            requireActivity().onBackPressed()
+            requireActivity().supportFragmentManager.popBackStack()
         }
         return root
     }
