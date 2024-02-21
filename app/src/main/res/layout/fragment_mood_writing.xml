@@ -78,7 +78,7 @@
                     android:background="@android:color/transparent"
                     android:ems="10"
                     android:inputType="text"
-                    android:textSize="15sp"
+                    android:textSize="17sp"
                     android:gravity="top"
                     android:hint="오늘 감정을 기록해요!"
                     android:fontFamily="@font/gowun_dodum_regular"
@@ -262,7 +262,7 @@
                     android:layout_gravity="center"
                     android:background="#BDBDBD" />
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_desire"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -273,7 +273,8 @@
                     android:gravity="top"
                     android:hint="오늘 갈망이 왔나요?"
                     android:fontFamily="@font/gowun_dodum_regular"
-                    android:textColor="#747474" />
+                    android:textColor="#747474"
+                    android:textSize="17sp"/>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
