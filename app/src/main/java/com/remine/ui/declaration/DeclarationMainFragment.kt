@@ -63,16 +63,13 @@ class DeclarationMainFragment : Fragment(), DeclarationAdapter.OnItemClickListen
 
                         binding.tvDeclDescription.text = timeText
 
-                        timeText = SpannableStringBuilder(binding.tvTop.text.toString())
-                        val startIndex2 = 0
-                        val endIndex2 = timeText.indexOf("님")
-                        timeText.replace(startIndex2, endIndex2, result.result.memberName)
-                        binding.tvTop.text = timeText
+//                        timeText = SpannableStringBuilder(binding.tvTop.text.toString())
+//                        val startIndex2 = 0
+//                        val endIndex2 = timeText.indexOf("님")
+//                        timeText.replace(startIndex2, endIndex2, result.result.memberName)
+//                        binding.tvTop.text = timeText
                         setTextColor()
                     }
-//                    Log.d("membername", result.result.memberName + " " + result.result.todayParticipantsCount.toString())
-//                    bundle?.putString("memberName", result.result.memberName)
-//                    bundle?.putInt("participants", result.result.todayParticipantsCount)
 
                     Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 성공 ${result.toString()}")
                 }
