@@ -19,6 +19,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconSize="35dp"
+        app:itemBackground="@android:color/transparent"
         app:itemIconTint="@color/black" />
 
     <fragment
