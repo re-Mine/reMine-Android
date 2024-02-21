@@ -17,7 +17,6 @@ import android.widget.HorizontalScrollView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.media3.exoplayer.source.MediaSource
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import com.remine.R
