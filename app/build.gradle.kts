@@ -83,5 +83,8 @@ dependencies {
 
     // calendarview
     implementation("com.github.prolificinteractive:material-calendarview:1.4.3")
+
+    // chart
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
 

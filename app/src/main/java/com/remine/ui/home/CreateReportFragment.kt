@@ -37,6 +37,7 @@ class CreateReportFragment : Fragment() {
 
 
         // 스피너 선택시 이벤트
+        /*
         binding.spinnerCenter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 // 첫 번째 호출 값 무시
@@ -57,6 +58,7 @@ class CreateReportFragment : Fragment() {
                 // Nothing selected
             }
         }
+        */
 
         // 생성 버튼 클릭시 이벤트
         binding.buttonCreateReport.setOnClickListener {

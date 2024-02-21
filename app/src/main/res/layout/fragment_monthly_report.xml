@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="85dp"
     tools:context=".ui.home.MonthlyReportFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bannerAnalyzeCraving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="충동 분석"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ibm_semibold" />
+
+                <TextView
+                    android:id="@+id/descriptionCraving"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="리마인 님의 이번주 갈망 정도는 24%로 관측되었습니다. \n다음주 갈망도는 3.5% 감소될 것으로 예측됩니다."
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ibm_medium"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:padding="10dp"
+                    android:background="@drawable/layout_round">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/cravingChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bannerAnalyzeSituation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상황 분석"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ibm_semibold" />
+
+                <TextView
+                    android:id="@+id/descriptionSituation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="이번주는 분노, 피로, 힘듦 등의 감정이 측정되었고, \n갈망의 주 원인은 ‘분노’의 감정으로 예측되었습니다.\n해당 감정을 가장 많이 느낀 요일은 ‘월요일’입니다."
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ibm_medium"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:padding="10dp"
+                    android:background="@drawable/layout_round">
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/situationChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
