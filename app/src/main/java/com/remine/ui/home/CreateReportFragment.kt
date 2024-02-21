@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.remine.R
 import com.remine.databinding.FragmentCreateReportBinding
 import com.remine.ui.community.news.PopularNewsRVAdapter
 
@@ -34,6 +35,16 @@ class CreateReportFragment : Fragment() {
 
         val nearCenterRvAdapter = NearCenterRVAdapter(nearCenterItems)
         centerRv.adapter = nearCenterRvAdapter
+
+        // 치료 보고서에 들어가는 내용 확인 버튼 클릭시 이벤트
+        val newFragment = MonthlyReportFragment()
+
+        binding.buttonCheckReport.setOnClickListener{
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_create_report, newFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
 
 
         // 스피너 선택시 이벤트

@@ -40,7 +40,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-
         val adapter = ReportAdapter(childFragmentManager, lifecycle)
 
         adapter.addFragment(WriteReportFragment(), "작성하기")

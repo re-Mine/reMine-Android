@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.navigation_declaration -> {
                     navController.navigate(R.id.navigation_declaration)
-                    it.setIcon(R.drawable.btm_declaration_sl)
-                    it.setIconTintList(ColorStateList.valueOf(resources.getColor(R.color.blue)))
                     return@setOnItemSelectedListener true
                 }
 
