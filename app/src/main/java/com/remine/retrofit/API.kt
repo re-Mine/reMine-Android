@@ -3,7 +3,7 @@ package com.remine.retrofit
 object API {
     const val BASE_URL : String = "https://www.remine.site:8080/"
 
-    const val AUTH_SIGN_UP : String = "auth/shop-owner/sign-up"
+    const val DECLARATION : String = "/api/v1/declarations"
 
 }
 

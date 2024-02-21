@@ -13,17 +13,11 @@ import retrofit2.http.Part
 
 interface IRetrofit {
 
-//    @POST("a")
-//    fun tokenRefresh(@Body refreshTokenArray : String): Call<AuthRes>
-//
-//
-//    // 사장 회원가입
-    @GET("/api/v1/declarations")
+    @GET(API.DECLARATION)
     fun getDeclarations(): Call<DeclarationResponse>
 
     @Multipart
-    @POST("/api/v1/declarations")
+    @POST(API.DECLARATION)
     fun postDeclarations(@Part file: MultipartBody.Part,@Part("content") content: RequestBody): Call<JsonElement>
-
 
 }
