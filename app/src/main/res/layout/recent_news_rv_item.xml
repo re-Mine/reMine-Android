@@ -46,7 +46,7 @@
                     android:id="@+id/creationTime1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="n분 전" />
+                    android:text="1분 전" />
 
             </LinearLayout>
 
@@ -131,7 +131,7 @@
                     android:id="@+id/creationTime2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="n분 전" />
+                    android:text="5분 전" />
 
             </LinearLayout>
 
@@ -214,7 +214,7 @@
                     android:id="@+id/creationTime3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="n분 전" />
+                    android:text="44분 전" />
 
             </LinearLayout>
 

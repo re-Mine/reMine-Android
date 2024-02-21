@@ -75,7 +75,7 @@
                             android:id="@+id/writterCreationTime"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="n분 전" />
+                            android:text="1분 전" />
 
                     </LinearLayout>
 
@@ -87,11 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="42dp"
                     android:text="치료를 고민하고 계신 분들께 .. 제가 최근 5년간 치료받았던 후기를 말씀드리고자 합니다.
-처음엔 저도 재활 시작을 많이 고민했어요.
-
-하지만 마약 치료는 꼭 하셔야 합니다 저는 계속 병원만 주기적으로 다녀도 계속 생각이 나더라구요.
-
-꼭 격리 시설을 갖추고 있는 재활 센터를 입소하는 것을 추천드립니다. 저는 정말 많은 효과를 봤어요. " />
+처음엔 저도 재활 시작을 많이 고민했어요.\n\n하지만 마약 치료는 꼭 하셔야 합니다 저는 계속 병원만 주기적으로 다녀도 계속 생각이 나더라구요.\n\n꼭 격리 시설을 갖추고 있는 재활 센터를 입소하는 것을 추천드립니다. 저는 정말 많은 효과를 봤어요. " />
 
                 <ImageButton
                     android:id="@+id/imageButton"
