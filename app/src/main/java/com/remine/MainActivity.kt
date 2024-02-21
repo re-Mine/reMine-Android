@@ -1,9 +1,13 @@
 package com.remine
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.size
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         /*
@@ -38,6 +43,34 @@ class MainActivity : AppCompatActivity() {
         for (i in 0 until menu.size()) {
             menu.getItem(i).title = ""
         }
+
+        navView.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.navigation_declaration -> {
+                    navController.navigate(R.id.navigation_declaration)
+                    it.setIcon(R.drawable.btm_declaration_sl)
+                    it.setIconTintList(ColorStateList.valueOf(resources.getColor(R.color.blue)))
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.navigation_home -> {
+                    navController.navigate(R.id.navigation_home)
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.navigation_community -> {
+                    navController.navigate(R.id.navigation_community)
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.navigation_mypage -> {
+                    navController.navigate(R.id.navigation_mypage)
+                    return@setOnItemSelectedListener true
+                }
+            }
+            false
+        }
+
 
 //        // 화면의 가로 크기를 가져오는 코드
 //        // 화면의 가로 크기를 가져오는 코드
