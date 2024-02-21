@@ -8,21 +8,21 @@
         android:id="@+id/imageCareerGed"
         android:layout_width="210dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:src="@drawable/career_ged"/>
 
     <ImageView
         android:id="@+id/imageCareerComputer"
         android:layout_width="210dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:src="@drawable/career_computer"/>
 
     <ImageView
         android:id="@+id/imageCareerInterview"
         android:layout_width="210dp"
         android:layout_height="250dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:src="@drawable/career_interview"/>
 
 
