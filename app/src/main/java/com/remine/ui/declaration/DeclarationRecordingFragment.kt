@@ -16,6 +16,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -30,11 +31,15 @@ import okhttp3.RequestBody
 import java.io.File
 import java.io.IOException
 import java.util.Date
+import kotlin.random.Random
 
 private const val ARG_PARAM1 = "isGuide"
 
 private const val LOG_TAG = "AudioRecordTest"
 private const val REQUEST_RECORD_AUDIO_PERMISSION = 200
+
+private val animations = mutableListOf<Animation>()
+
 
 class DeclarationRecordingFragment : Fragment() {
     private var fileName: String = ""
@@ -84,6 +89,7 @@ class DeclarationRecordingFragment : Fragment() {
         val root: View = binding.root
         setTextColor()
 
+        val rectangles = listOf(binding.rectangle1, binding.rectangle2, binding.rectangle3, binding.rectangle4)
         RetrofitManager.instance.getDeclarations(){
                 state, result ->
             when(state){
@@ -185,9 +191,22 @@ class DeclarationRecordingFragment : Fragment() {
             if (isRecording) {
                 stopRecording()
                 binding.tvDeclDescription.text = "녹음 완료"
+                binding.clAnimation.visibility = View.INVISIBLE
+                stopRecording()
+                animations.forEach { it.cancel() }
             } else {
                 startRecording()
                 binding.tvDeclDescription.text = "듣는 중..."
+
+                binding.clAnimation.visibility = View.VISIBLE
+                rectangles.forEach { rectangle ->
+                    val randomHeight = Random.nextInt(80, 300) // 랜덤 높이 설정
+                    val animation = ResizeAnimation(rectangle, 30, randomHeight)
+                    animation.duration = 100000 // 애니메이션 지속 시간 설정 (ms)
+                    rectangle.startAnimation(animation)
+                    animations.add(animation)
+                }
+
 
             }
 
@@ -201,7 +220,9 @@ class DeclarationRecordingFragment : Fragment() {
             binding.ibMicStop.visibility = View.GONE
             binding.ibMic.visibility = View.VISIBLE
             binding.tvDeclDescription.text = " "
+            binding.clAnimation.visibility = View.INVISIBLE
             stopRecording()
+            animations.forEach { it.cancel() } // 모든 애니메이션을 중지
         }
         // Inflate the layout for this fragment
         return root
@@ -338,6 +359,7 @@ class DeclarationRecordingFragment : Fragment() {
         timeText.setSpan(ForegroundColorSpan(color), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         binding.tvTop.text = timeText
     }
+
 
     private fun showGuidance() {
         val newFragment2 = DeclartionGuideFragment()
