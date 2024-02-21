@@ -23,6 +23,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -32,14 +33,11 @@
 
                     <TextView
                         android:id="@+id/bannerCommunity"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
                         android:fontFamily="@font/ibm_semibold"
-                        android:textSize="40dp"
-                        android:textColor="#000000"
+                        android:textSize="40sp"
+                        android:textColor="@color/black"
                         android:text="커뮤니티" />
 
                 </LinearLayout>
@@ -62,23 +60,21 @@
 
                             <TextView
                                 android:id="@+id/bannerCheckNews"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
                                 android:text="소식 확인하기"
-                                android:fontFamily="@font/ibm_semibold"
-                                android:textColor="#000000"
-                                android:textSize="28dp" />
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/ibm_semibold" />
 
                             <TextView
                                 android:id="@+id/bannerPopularNews"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
                                 android:text="지금 인기있는 소식"
-                                android:fontFamily="@font/ibm_semibold"
-                                android:textColor="#000000"
-                                android:textSize="22dp" />
+                                android:textSize="17sp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/ibm_medium" />
 
                         </LinearLayout>
 
@@ -131,20 +127,17 @@
 
                     <TextView
                         android:id="@+id/bannerShareDeclaration"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:textColor="#000000"
-                        android:textSize="28dp"
                         android:fontFamily="@font/ibm_semibold"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
                         android:text="선언 나누기" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="15dp"
+                        android:layout_marginVertical="15dp"
                         android:background="@drawable/viewpager_round"
                         android:orientation="vertical">
 
@@ -183,13 +176,10 @@
                             android:id="@+id/bannerCareer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
                             android:layout_weight="1"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
                             android:text="커리어"
-                            android:textColor="#000000"
-                            android:textSize="28dp"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
                             android:fontFamily="@font/ibm_semibold" />
 
                         <ImageButton
@@ -198,9 +188,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="8"
                             android:background="@android:color/transparent"
-                            android:paddingTop="15dp"
                             android:paddingRight="30dp"
-                            android:paddingBottom="15dp"
                             android:scaleType="centerInside"
                             android:src="@drawable/arrow_right" />
 
