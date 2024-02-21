@@ -23,16 +23,17 @@ class MypageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val mypageViewModel =
-            ViewModelProvider(this).get(MypageViewModel::class.java)
-
+//        val mypageViewModel =
+//            ViewModelProvider(this).get(MypageViewModel::class.java)
+//
         _binding = FragmentMypageBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textMypage
-        mypageViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        val root: View = binding.root
+//
+//        val textView: TextView = binding.textMypage
+//        mypageViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
         return root
     }
 
