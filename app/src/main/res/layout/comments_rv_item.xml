@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <TextView
@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="작성자 닉네임" />
+                    android:text="행복한 강아지" />
 
                 <TextView
                     android:id="@+id/commentCreationTime1"
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:orientation="vertical">
 
@@ -92,7 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="작성자 닉네임" />
+                    android:text="웃는 까마귀" />
 
                 <TextView
                     android:id="@+id/commentCreationTime2"
@@ -138,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <TextView
@@ -146,7 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:text="작성자 닉네임" />
+                    android:text="졸린 기린" />
 
                 <TextView
                     android:id="@+id/commentCreationTime3"
