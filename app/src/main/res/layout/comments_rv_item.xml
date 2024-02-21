@@ -44,7 +44,7 @@
                     android:id="@+id/commentCreationTime1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="n분 전" />
+                    android:text="2분 전" />
 
             </LinearLayout>
 
@@ -98,7 +98,7 @@
                     android:id="@+id/commentCreationTime2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="n분 전" />
+                    android:text="25분 전" />
 
             </LinearLayout>
 
@@ -109,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="46dp"
-            android:text="정말 크게 공감하고 갑니다. 사실 치료 보다는 저도 재활 시설을 꾸준히 다니는 게 정말 중요한 것 같아요." />
+            android:text="정말 옳은 말씀이에요. 제 동생도 재활 시설을 꾸준히 다니고 효과를 크게 봤거든요." />
 
     </LinearLayout>
 
@@ -152,7 +152,7 @@
                     android:id="@+id/commentCreationTime3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="n분 전" />
+                    android:text="47분 전" />
 
             </LinearLayout>
 
@@ -163,7 +163,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="46dp"
-            android:text="정말 크게 공감하고 갑니다. 사실 치료 보다는 저도 재활 시설을 꾸준히 다니는 게 정말 중요한 것 같아요." />
+            android:text="좋은 말씀 감사합니다. 재활 시설을 다니는 것에 대한 망설임이 있었는데 덕분에 고민이 좀 해결된 것 같아요." />
 
     </LinearLayout>
 
