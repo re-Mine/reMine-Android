@@ -54,22 +54,23 @@ class DeclarationMainFragment : Fragment(), DeclarationAdapter.OnItemClickListen
             when(state){
                 RESPONSE_STATE.OKAY -> {
                     val resultData = result?.result?.declarationList
-                    init(resultData!!)
+                    if (resultData != null) {
+                        init(resultData!!)
 
                     timeText = SpannableStringBuilder(binding.tvDeclDescription.text.toString())
                     val startIndex = timeText.indexOf("총")+2
                     val endIndex = timeText.indexOf("번")
                     timeText.replace(startIndex, endIndex, result?.result.declarationList.size.toString())
 
-                    binding.tvDeclDescription.text = timeText
+                        binding.tvDeclDescription.text = timeText
 
-//                    timeText = SpannableStringBuilder(binding.tvTop.text.toString())
-//                    val startIndex2 = 0
-//                    val endIndex2 = timeText.indexOf("님")
-//                    timeText.replace(startIndex2, endIndex2, result.result.memberName)
-//                    binding.tvTop.text = timeText
-                    setTextColor()
-
+                        timeText = SpannableStringBuilder(binding.tvTop.text.toString())
+                        val startIndex2 = 0
+                        val endIndex2 = timeText.indexOf("님")
+                        timeText.replace(startIndex2, endIndex2, result.result.memberName)
+                        binding.tvTop.text = timeText
+                        setTextColor()
+                    }
 //                    Log.d("membername", result.result.memberName + " " + result.result.todayParticipantsCount.toString())
 //                    bundle?.putString("memberName", result.result.memberName)
 //                    bundle?.putInt("participants", result.result.todayParticipantsCount)

@@ -73,7 +73,6 @@ class DeclarationRecordingFragment : Fragment() {
 //        participants = arguments?.getInt("participants")
 //        membername = arguments?.getString("memberName")
 
-
     }
 
     override fun onCreateView(
@@ -83,6 +82,7 @@ class DeclarationRecordingFragment : Fragment() {
 
         _binding = FragmentDeclarationRecordingBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        setTextColor()
 
         RetrofitManager.instance.getDeclarations(){
                 state, result ->
@@ -97,6 +97,38 @@ class DeclarationRecordingFragment : Fragment() {
 //                    binding.tvTop.text = timeText
 
                     val timeText = SpannableStringBuilder(binding.tvDeclPeople.text.toString())
+                    val startIndex = timeText.indexOf("오늘도")+4
+                    val endIndex = timeText.indexOf("명")
+                    timeText.replace(startIndex, endIndex, resultData?.todayParticipantsCount.toString())
+
+                    binding.tvDeclPeople.text = timeText
+
+                    setTextColor()
+                    Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 성공 ${result.toString()}")
+                }
+                RESPONSE_STATE.FAIL -> {
+                    Log.d("retrofit", "DeclarationMainFragment - onCreateView() called / 선언 조회 실패")
+                }
+
+                else -> {}
+            }
+        }
+
+        fileName = "${requireContext().filesDir}/audiorecordtest.3gp"
+        //fileName = Date().time.toString()+".mp3"
+        RetrofitManager.instance.getDeclarations(){
+                state, result ->
+            when(state){
+                RESPONSE_STATE.OKAY -> {
+                    val resultData = result?.result
+
+                    var timeText = SpannableStringBuilder(binding.tvTop.text.toString())
+                    val startIndex2 = 0
+                    val endIndex2 = timeText.indexOf("님")
+                    timeText.replace(startIndex2, endIndex2, resultData?.memberName)
+                    binding.tvTop.text = timeText
+
+                    timeText = SpannableStringBuilder(binding.tvDeclPeople.text.toString())
                     val startIndex = timeText.indexOf("오늘도")+4
                     val endIndex = timeText.indexOf("명")
                     timeText.replace(startIndex, endIndex, resultData?.todayParticipantsCount.toString())
