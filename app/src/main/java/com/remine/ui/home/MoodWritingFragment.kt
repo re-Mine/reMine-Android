@@ -37,7 +37,7 @@ class MoodWritingFragment : Fragment() {
         binding.tvDate.text = date
 
         binding.buttonBack.setOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().supportFragmentManager.popBackStack()
         }
 
         binding.tvSave.setOnClickListener {
@@ -45,7 +45,7 @@ class MoodWritingFragment : Fragment() {
             val text = binding.tvRating.text.toString() + " : " +binding.ratingBar.rating.toString() + "\n" + binding.tvRating2.text.toString() + " : " +binding.ratingBar2.rating.toString() + "\n" + binding.tvRating3.text.toString() + " : " +binding.ratingBar3.rating.toString()+ "\n" + binding.tvRating4.text.toString() + " : " +binding.ratingBar4.rating.toString()+ "\n" + binding.tvRating5.text.toString() + " : " +binding.ratingBar5.rating.toString()+ "\n" + binding.tvRating6.text.toString() + " : " +binding.ratingBar6.rating.toString()
 
             requireActivity().findViewById<TextView>(R.id.tv_diary2).text = text
-            requireActivity().onBackPressed()
+            requireActivity().supportFragmentManager.popBackStack()
         }
         return root
     }
