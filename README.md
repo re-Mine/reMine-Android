@@ -13,7 +13,3 @@
 <br>
 <br>
 ![13](https://github.com/re-Mine/reMine-Android/assets/55499429/fb9df7e3-09bf-4e94-9a8f-1f048792fb7f)
-
-
-![image](https://github.com/dsc-sookmyung/2023-ta-bom-SolutionChallenge/assets/49427080/0a9d2c2a-1826-455f-8fc2-9a1915c5c534)
-
