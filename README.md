@@ -26,11 +26,13 @@ re:Mine is a project designed to assist in the rehabilitation treatment of adole
 <br>
 <br>
 
-## ScreenShots
+## 🎬 ScreenShots
 
 |<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/853fb6f3-8094-4b48-8cf9-802b873b1e19">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/1bd2aaf7-1ff0-48fc-9ae4-e8368f0e4f16" >|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/afc3b28d-25fd-4b04-8560-4fbc136d4eb9">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/325d3a81-f83f-47fc-a8fa-032e14dc9940">|
 |------|------|------|------|
 |**Sign in/Sign up & Mypagem**|**Recording - Situation**|**Recording - Feeling**|**Reporting & Analysis**|
+
+<br>
 
 |<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/ee39dc59-0ab6-45fe-92ba-1a17c1a07260">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/54fdb09e-b11c-44a0-8515-1034e00fdebd" >|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/716f0c9d-8d7b-4c59-a16b-bed2ca4ab27f">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/e248a76d-baab-448e-88fd-8fe4ca79a794">|
 |------|------|------|------|
