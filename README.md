@@ -3,7 +3,7 @@
 <br>
 
 ## 📱 How to run our app service
-- Click [here](https://drive.google.com/drive/folders/1_wUgyb4SwmRlgZxCLX3tP-cZ9-uzlA8I?usp=share_link) to download an apk file.
+- Click [here](https://github.com/re-Mine/reMine-Android/releases) to download an apk file.
 - Install the apk file on your android smartphone.
 
 ## ✔ UN SDGs Goals & Target
