@@ -32,7 +32,7 @@ re:Mine is a project designed to assist in the rehabilitation treatment of adole
 |------|------|------|------|
 |**Sign in/Sign up & Mypagem**|**Recording - Situation**|**Recording - Feeling**|**Reporting & Analysis**|
 
-|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/ee39dc59-0ab6-45fe-92ba-1a17c1a07260">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/54fdb09e-b11c-44a0-8515-1034e00fdebd" >|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/716f0c9d-8d7b-4c59-a16b-bed2ca4ab27f">|<img src="(https://github.com/re-Mine/reMine-Android/assets/55499429/e248a76d-baab-448e-88fd-8fe4ca79a794">|
+|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/ee39dc59-0ab6-45fe-92ba-1a17c1a07260">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/54fdb09e-b11c-44a0-8515-1034e00fdebd" >|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/716f0c9d-8d7b-4c59-a16b-bed2ca4ab27f">|<img src="https://github.com/re-Mine/reMine-Android/assets/55499429/e248a76d-baab-448e-88fd-8fe4ca79a794">|
 |------|------|------|------|
 |**Checking Today's Declaration/Recording**|**Community & Checking Declaration**|**Community**|**Career - Course Registration**|
 
